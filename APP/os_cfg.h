@@ -39,7 +39,7 @@
 #define OS_LOWEST_PRIO           20    /* Defines the lowest priority that can be assigned ...         */
                                        /* ... MUST NEVER be higher than 254!                           */
 
-#define OS_MAX_EVENTS            12   /* Max. number of event control blocks in your application      */
+#define OS_MAX_EVENTS            20   /* Max. number of event control blocks in your application      */
 #define OS_MAX_FLAGS              12    /* Max. number of Event Flag Groups    in your application      */
 #define OS_MAX_MEM_PART           12    /* Max. number of memory partitions                             */
 #define OS_MAX_QS                 12    /* Max. number of queue control blocks in your application      */

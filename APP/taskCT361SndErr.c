@@ -17,11 +17,14 @@ void TaskCT361SndErr(void *p_arg)
 	
 	while(1)
 	{
+		SendString("start SemPend\r\n");
 		OSSemPend(CT361SndErrSemp, 0, &err);
+		SendString("end of SemPend\r\n");
 		if(err ==0) 
 		{
+			SendString("start QPend\r\n");
 			msg = OSQPend(CT361SndErrMbox, 10, &err);
-			
+			SendString("end QPend\r\n");
 			if(err == OS_TIMEOUT)
 			{
 				//send ERROR info and read version cmd

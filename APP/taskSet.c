@@ -75,7 +75,9 @@ void TaskSet(void *p_arg)
  * Description : 任务建立   共9个任务
  *******************************************************************************/
 
-  //创建协议解析任务
+		CT361SndErrSemp = OSSemCreate(0);//creat sem
+		
+		//创建协议解析任务
     OSTaskCreate(TaskProtocol,
                  (void*)0,
                  &TaskProtocolStk[TASK_PROTOCOL_STKSIZE-1],
@@ -114,7 +116,8 @@ void TaskSet(void *p_arg)
     ProtoSendMBox = OSQCreate(&ProtoSendQBuff[0], TASK_PROTOSEND_QSIZE);
     TestMBox      = OSQCreate(&TestQBuff[0], TASK_TEST_QSIZE);
     Si4432ReadMBox   = OSQCreate(&Si4432ReadQBuff[0], TASK_Si4432READ_QSIZE);
-		CT361SndErrSemp = OSSemCreate(0);//creat sem
+		CT361SndErrMbox = OSQCreate(&CT361SndErrQBuff[0],TASK_CT361_SND_ERR_QSIZE);
+		
 
    OS_EXIT_CRITICAL();
    SysTickInit();

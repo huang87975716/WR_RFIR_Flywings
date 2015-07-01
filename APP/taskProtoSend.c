@@ -76,7 +76,9 @@ void TaskProtoSend(void *p_arg)
                                WatchDog_Feed(); //喂狗
                               Flash_Read(URC_ADDR, ct361_Buffer, 208);    //读取FLASH ID存入BUF
                                WatchDog_Feed(); //喂狗
+													SendString("Start SemPost\r\n");
                           OSSemPost(CT361SndErrSemp);//    
+													SendString("end SemPost\n\r");
 													Send_IRLenData(USART2,0x07,ct361_Buffer);   //电视
 															
                                  LED_Learn(0);
