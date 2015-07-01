@@ -366,6 +366,8 @@ void ReV_CH361ReVProtocol(INT8U *buf)
              u2p->end = buf[i];
              i++;
              // 判断END
+					if((u2p->command)==0x87||(u2p->command)==0xC7) \
+														OSQPost(CT361SndErrMbox,(void*)(u2p->command));					
              if (learn_cmd==1)  //学习开始标志位允许学习
           {
           //   learn_cmd=0;//清空开始学习标志位

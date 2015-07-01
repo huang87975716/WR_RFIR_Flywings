@@ -59,6 +59,7 @@ void TaskProtoSend(void *p_arg)
                               Flash_Read(ARC_ADDR, ct361_Buffer, 208);    //读取FLASH ID存入BUF
                                WatchDog_Feed(); //喂狗
                               Send_IRLenData(USART2,0x0d,ct361_Buffer);   //空调
+															OSSemPost(CT361SndErrSemp);//
                              // SendString("空调发码");
                                LED_Learn(0);
                                WatchDog_Feed(); //喂狗
@@ -75,7 +76,9 @@ void TaskProtoSend(void *p_arg)
                                WatchDog_Feed(); //喂狗
                               Flash_Read(URC_ADDR, ct361_Buffer, 208);    //读取FLASH ID存入BUF
                                WatchDog_Feed(); //喂狗
-                              Send_IRLenData(USART2,0x07,ct361_Buffer);   //电视
+                          OSSemPost(CT361SndErrSemp);//    
+													Send_IRLenData(USART2,0x07,ct361_Buffer);   //电视
+															
                                  LED_Learn(0);
                            //    SendString("电视发码");
                                WatchDog_Feed(); //喂狗

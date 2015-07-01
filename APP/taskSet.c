@@ -99,6 +99,12 @@ void TaskSet(void *p_arg)
                  &TaskSi4432ReadStk[TASK_SET_STKSIZE-1],
                  TASK_Si4432_READ_PRIO );
 
+	//创建CT361返回码接收任务
+	OSTaskCreate(TaskCT361SndErr,\
+					(void*)0,\
+					&TaskCT361SndErrStk[TASK_CT361_SND_ERR_STKSIZE-1],\
+					TASK_CT361_SND_ERR_PRIO);
+
 
 /********************************************************************************
  * Description : 创建消息队列
@@ -108,6 +114,7 @@ void TaskSet(void *p_arg)
     ProtoSendMBox = OSQCreate(&ProtoSendQBuff[0], TASK_PROTOSEND_QSIZE);
     TestMBox      = OSQCreate(&TestQBuff[0], TASK_TEST_QSIZE);
     Si4432ReadMBox   = OSQCreate(&Si4432ReadQBuff[0], TASK_Si4432READ_QSIZE);
+		CT361SndErrSemp = OSSemCreate(0);//creat sem
 
    OS_EXIT_CRITICAL();
    SysTickInit();

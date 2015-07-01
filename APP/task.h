@@ -78,6 +78,17 @@ void TaskSi4432Read(void *p_arg);
 EXTERN OS_EVENT* Si4432ReadMBox;
 EXTERN void* Si4432ReadQBuff[TASK_Si4432READ_QSIZE];
 
+//task for waitting response after send learned codes to CT361
+#define TASK_CT361_SND_ERR_PRIO 				10
+#define TASK_CT361_SND_ERR_STKSIZE			100
+EXTERN	OS_STK	TaskCT361SndErrStk[TASK_CT361_SND_ERR_STKSIZE];
+void TaskCT361SndErr(void *p_arg);
+#define TASK_CT361_SND_ERR_QSIZE				10u
+EXTERN OS_EVENT* CT361SndErrMbox;
+EXTERN void* CT361SndErrQBuff[TASK_CT361_SND_ERR_QSIZE];
+
+EXTERN OS_EVENT* CT361SndErrSemp;
+
 
 /*
 #define TASK_SET_QSIZE                 20u
