@@ -26,6 +26,8 @@
  *
  * Returns     : None.
  *******************************************************************************/
+extern unsigned char ChkLenData(unsigned char data[208]);
+
 void SendIDAck(USART_TypeDef *USARTx, IDPROTOCOL_t *pProto)
 {
     IDPROTOCOL_t proto;
@@ -366,11 +368,19 @@ void ReV_CH361ReVProtocol(INT8U *buf)
              u2p->end = buf[i];
              i++;
              // 判断END
-					
+					if (u2p->length == 208) 
+					{
+						if (u2p->length == 208) 
+						{
+							SendString("\r\nCheck learned data\r\n");
+							Outint(ChkLenData(u2p->data));
+							SendString("\r\nCheck learned data\r\n");
+						}
+					}
 					if((u2p->command)==0x87||(u2p->command)==0xC7) 
 					{
 						SendString("Start QPost\r\n");
-						OSQPost(CT361SndErrMbox,(void*)(u2p->command));					
+ 						OSQPost(CT361SndErrMbox,(void*)(u2p->command));					
 						SendString("end QPost\r\n");
 					}
              if (learn_cmd==1)  //学习开始标志位允许学习
@@ -379,7 +389,8 @@ void ReV_CH361ReVProtocol(INT8U *buf)
               Timout_Count=TIMOUT_20s;  //  超时检测标志复位
              if(((u2p->command)==0x86)||((u2p->command)==0x8c))  //协议end  电视学习成功 0x86  空调学习成功0x8c
             {
-                    if((learn_DeviceName>=1)&&(learn_DeviceName<=10))//空调 1-10空调
+                    
+									if((learn_DeviceName>=1)&&(learn_DeviceName<=10))//空调 1-10空调
                     {
                         if((learn_KeyCode>=1)&&(learn_KeyCode<=10))  //每个空调固定10键
                         {

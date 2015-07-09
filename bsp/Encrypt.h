@@ -34,7 +34,7 @@
 
 
 //定义内部FLASH保存数据地址
-#define  RFIR_ID_ADDR       0x08008228    //ID存储地址  4字节    程序空间：0x08000000-0x080078ff        存储空间：0x08007900-0x0800ffff   33K字节
+#define  RFIR_ID_ADDR       0x08008400    //ID存储地址  4字节    程序空间：0x08000000-0x080078ff        存储空间：0x08007900-0x0800ffff   33K字节
 #define  DEVICE_REC_ADDR    RFIR_ID_ADDR+4    //记录已保存的设备 2字节   第1字节记录已学习的空调设备数量  第2字节记录已学习的电视设备数量
 
 #define  ARC1_ADDR   DEVICE_REC_ADDR+4  //空调1起始地址 每个空调地址 2080字节可存 10个键值 （10*208）  7908

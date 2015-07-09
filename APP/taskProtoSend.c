@@ -15,6 +15,7 @@
 */
 
 #include "includes.h"
+extern void SendTenZero(void);
 u8 protosend_buf[3]={0};
 /********************************************************************************
  * FunctionName: TaskProtoSend
@@ -83,11 +84,14 @@ void TaskProtoSend(void *p_arg)
 															
                                  LED_Learn(0);
                            //    SendString("µÁ ”∑¢¬Î");
+													#if 1
                                WatchDog_Feed(); //Œππ∑
                                DelayMs(30);
                                WatchDog_Feed(); //Œππ∑
                               //OSTimeDly(100);
+															Send_IRcmd(USART2, (INT8U)(CMD_IRIC_VERSION));
                               Send_Stop(USART2);
+													#endif 
 
                           }
                 DeviceName=0,DeviceCode=0;
