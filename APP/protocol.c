@@ -26,7 +26,6 @@
  *
  * Returns     : None.
  *******************************************************************************/
-extern unsigned char ChkLenData(unsigned char data[208]);
 
 void SendIDAck(USART_TypeDef *USARTx, IDPROTOCOL_t *pProto)
 {
@@ -367,22 +366,6 @@ void ReV_CH361ReVProtocol(INT8U *buf)
         {
              u2p->end = buf[i];
              i++;
-             // 判断END
-					if (u2p->length == 208) 
-					{
-						if (u2p->length == 208) 
-						{
-							SendString("\r\nCheck learned data\r\n");
-							Outint(ChkLenData(u2p->data));
-							SendString("\r\nCheck learned data\r\n");
-						}
-					}
-					if((u2p->command)==0x87||(u2p->command)==0xC7) 
-					{
-						SendString("Start QPost\r\n");
- 						OSQPost(CT361SndErrMbox,(void*)(u2p->command));					
-						SendString("end QPost\r\n");
-					}
              if (learn_cmd==1)  //学习开始标志位允许学习
           {
           //   learn_cmd=0;//清空开始学习标志位

@@ -425,9 +425,8 @@ ARM Macro Assembler    Page 7
               00000000 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\output
-\os_cpu_a.d -o.\output\os_cpu_a.o -Id:\Keil_v4\ARM\RV31\INC -Id:\Keil_v4\ARM\CM
-SIS\Include -Id:\Keil_v4\ARM\Inc\ST\STM32F10x --list=.\os_cpu_a.lst OS\port\os_
-cpu_a.asm
+\os_cpu_a.d -o.\output\os_cpu_a.o -ID:\Keil\ARM\RV31\INC -ID:\Keil\ARM\CMSIS\In
+clude -ID:\Keil\ARM\Inc\ST\STM32F10x --list=.\os_cpu_a.lst OS\port\os_cpu_a.asm
 
 
 

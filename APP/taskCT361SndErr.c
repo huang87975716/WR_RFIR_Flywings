@@ -23,54 +23,12 @@ void TaskCT361SndErr(void *p_arg)
 		SendString("end of SemPend\r\n");
 		if(err ==0) 
 		{
-			SendString("waitting for 500 ms\r\n");
-			//OSTimeDlyHMSM(0,0,1,500);
-			//SendString("delay ended, sending read version cmd\r\n");
-			//Send_IRcmd(USART2, (INT8U)(CMD_IRIC_VERSION));
-			//SendTenZero();
-			#if 0		//this is waitting for echo from CT361
-			SendString("start QPend\r\n");
-			msg = (INT8U)OSQPend(CT361SndErrMbox, 10, &err);
-			SendString("end QPend\r\n");
-			if(err == OS_TIMEOUT)
-			{
-				//send ERROR info and read version cmd
-				Send_IRcmd(USART2, (INT8U)(CMD_IRIC_VERSION));
-				SendTenZero();
-				SendString("time out\r\n");
-			}
-			else if(err == 0)
-			{
-				if((msg)==0xC7) 
-				{
-					SendString("C7 error\r\n");
-				}
-				if((msg)==0x87)
-				{
-					SendString("sent success\r\n");
-				}
-			}
-			#endif
+			SendString("waitting for 1.5S\r\n");
+			OSTimeDlyHMSM(0,0,2,0);
+			SendString("delay ended, sending read version cmd\r\n");
+			Send_IRcmd(USART2, (INT8U)(CMD_IRIC_VERSION));
+			SendTenZero();
 		}
 	}
 }
 
-unsigned char ChkLenData(unsigned char data[])
-{
-	unsigned char i = 0;
-	unsigned char CountOfZero = 0;
-	unsigned char Count = 0;
-	unsigned char temp;
-	for(i=0;i<208;i++)
-	{
-		temp = data[i];
-		if (data[i]==0)	Count++;
-		else 
-		{
-			
-			CountOfZero = (Count>CountOfZero?Count:CountOfZero);
-			Count = 0;
-		}
-	}
-	return CountOfZero;
-}
