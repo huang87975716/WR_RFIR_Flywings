@@ -1,0 +1,63 @@
+*** Creating Trace Output File '.\output\WR_FIR.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\output\startup_stm32f10x_md.o"'
+### List of Objects: adding '".\output\core_cm3.o"'
+### List of Objects: adding '".\output\misc.o"'
+### List of Objects: adding '".\output\stm32f10x_bkp.o"'
+### List of Objects: adding '".\output\stm32f10x_dbgmcu.o"'
+### List of Objects: adding '".\output\stm32f10x_exti.o"'
+### List of Objects: adding '".\output\stm32f10x_fsmc.o"'
+### List of Objects: adding '".\output\stm32f10x_gpio.o"'
+### List of Objects: adding '".\output\stm32f10x_rcc.o"'
+### List of Objects: adding '".\output\stm32f10x_spi.o"'
+### List of Objects: adding '".\output\stm32f10x_usart.o"'
+### List of Objects: adding '".\output\stm32f10x_flash.o"'
+### List of Objects: adding '".\output\stm32f10x_tim.o"'
+### List of Objects: adding '".\output\stm32f10x_dma.o"'
+### List of Objects: adding '".\output\si4432.o"'
+### List of Objects: adding '".\output\base.o"'
+### List of Objects: adding '".\output\stm32init.o"'
+### List of Objects: adding '".\output\bsp.o"'
+### List of Objects: adding '".\output\encrypt.o"'
+### List of Objects: adding '".\output\spi.o"'
+### List of Objects: adding '".\output\dataflash.o"'
+### List of Objects: adding '".\output\iwatchdog.o"'
+### List of Objects: adding '".\output\stm32f10x_it.o"'
+### List of Objects: adding '".\output\app.o"'
+### List of Objects: adding '".\output\protocol.o"'
+### List of Objects: adding '".\output\taskprotocol.o"'
+### List of Objects: adding '".\output\taskprotosend.o"'
+### List of Objects: adding '".\output\tasktest.o"'
+### List of Objects: adding '".\output\taskset.o"'
+### List of Objects: adding '".\output\tasksi4432read.o"'
+### List of Objects: adding '".\output\taskct361snderr.o"'
+### List of Objects: adding '".\output\os_core.o"'
+### List of Objects: adding '".\output\os_flag.o"'
+### List of Objects: adding '".\output\os_mbox.o"'
+### List of Objects: adding '".\output\os_mem.o"'
+### List of Objects: adding '".\output\os_mutex.o"'
+### List of Objects: adding '".\output\os_q.o"'
+### List of Objects: adding '".\output\os_sem.o"'
+### List of Objects: adding '".\output\os_task.o"'
+### List of Objects: adding '".\output\os_time.o"'
+### List of Objects: adding '".\output\os_tmr.o"'
+### List of Objects: adding '".\output\os_cpu_a.o"'
+### List of Objects: adding '".\output\os_cpu_c.o"'
+### List of Objects: adding '".\output\os_dbg.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M3 ".\output\startup_stm32f10x_md.o" ".\output\core_cm3.o" ".\output\misc.o" ".\output\stm32f10x_bkp.o" ".\output\stm32f10x_dbgmcu.o" ".\output\stm32f10x_exti.o" ".\output\stm32f10x_fsmc.o" ".\output\stm32f10x_gpio.o" ".\output\stm32f10x_rcc.o" ".\output\stm32f10x_spi.o" ".\output\stm32f10x_usart.o" ".\output\stm32f10x_flash.o" ".\output\stm32f10x_tim.o" ".\output\stm32f10x_dma.o" ".\output\si4432.o" ".\output\base.o" ".\output\stm32init.o" ".\output\bsp.o" ".\output\encrypt.o" ".\output\spi.o" ".\output\dataflash.o" ".\output\iwatchdog.o" ".\output\stm32f10x_it.o" ".\output\app.o" ".\output\protocol.o" ".\output\taskprotocol.o" ".\output\taskprotosend.o" ".\output\tasktest.o" ".\output\taskset.o" ".\output\tasksi4432read.o" ".\output\taskct361snderr.o" ".\output\os_core.o" ".\output\os_flag.o" ".\output\os_mbox.o" ".\output\os_mem.o" ".\output\os_mutex.o" ".\output\os_q.o" ".\output\os_sem.o" ".\output\os_task.o" ".\output\os_time.o" ".\output\os_tmr.o" ".\output\os_cpu_a.o" ".\output\os_cpu_c.o" ".\output\os_dbg.o" 
+--strict --scatter ".\output\WR_FIR.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\WR_FIR.map" -o .\output\WR_FIR.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\output\WR_FIR.axf'
+### ADS-LD Command File: '.\output\WR_FIR.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\output\WR_FIR.lnp', Handle=0x000002E0
+### Writing '.lnp' file
+### ADS-LD Command file '.\output\WR_FIR.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
